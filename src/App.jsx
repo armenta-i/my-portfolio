@@ -2,6 +2,8 @@
 import './App.css'
 import Hero from './components/Hero'
 import Navigation from './components/Navigation'
+import About from './components/About'
+import Skills from './components/Skills'
 
 function App() {
 
@@ -9,7 +11,8 @@ function App() {
     <>
       <Navigation/>
       <Hero/>
-
+      <About/>
+      <Skills/>
     </>
   )
 }
