@@ -12,7 +12,7 @@ export default function Hero() {
 
     return (
         <>
-            <section className='relative h-[95vh] overflow-hidden'>
+            <section className='relative h-[95vh] overflow-hidden' id='home'>
                 <div className="absolute inset-0 bg-[url(/background_pic.jpg)] bg-cover bg-center blur-sm z-0"/>
                 <div className="relative z-10 flex text-center text-white justify-center h-full items-start">
                     <div className="mt-20 md:mt-32 lg:mt-54">

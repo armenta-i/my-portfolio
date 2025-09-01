@@ -45,7 +45,7 @@ export default function About() {
                     {/* Education card */}
                     <div 
                         style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)", }} 
-                        className='px-5 py-5 m-2 rounded-md mb-7 card group'
+                        className='card group'
                     >
                         <School style={{ color: 'var(--blue-sky)'}} className='ml-2 group-hover:animate-pulse' fontSize='large'/>
                         <h1 className='text-2xl py-2 pl-2'>Education</h1>
@@ -54,7 +54,7 @@ export default function About() {
 
                     <div 
                         style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)" }} 
-                        className='px-5 py-5 m-2 rounded-md mb-7 card group'
+                        className='card group'
                     >
                         <Code style={{ color: 'var(--blue-sky)'}} className='ml-2 group-hover:animate-pulse' fontSize='large'/>
                         <h1 className='text-2xl py-2 pl-2'>Experience</h1>
@@ -63,7 +63,7 @@ export default function About() {
 
                     <div 
                         style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)" }} 
-                        className='px-5 py-5 m-2 rounded-md mb-7 card group'
+                        className='card group'
                     >
                         <Psychology style={{ color: 'var(--blue-sky)'}} className='ml-2 group-hover:animate-pulse' fontSize='large'/>
                         <h1 className='text-2xl py-2 pl-2'>Problem Solver</h1>
@@ -72,7 +72,7 @@ export default function About() {
 
                     <div 
                         style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)" }} 
-                        className='px-5 py-5 m-2 rounded-md mb-7 card group'
+                        className='card group'
                     >
                         <Group style={{ color: 'var(--blue-sky)'}} className='ml-2 group-hover:animate-pulse' fontSize='large'/>
                         <h1 className='text-2xl py-2 pl-2'>Team Player</h1>

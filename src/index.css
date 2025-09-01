@@ -48,7 +48,12 @@ h1, h2 {
   color: #00a7f5;
 }
 
+/* px-5 py-5 m-2 rounded-md mb-7 card group */
 .card {
+  padding: 1.25rem;
+  border-radius: .375rem;
+  margin: .5rem;
+  margin-bottom: 1.75rem;
   border:  none;
   transition: transform .4s ease-in-out;
 }
@@ -58,4 +63,27 @@ h1, h2 {
   box-shadow: 1px 0px 39px -25px rgba(0,0,0,0.36);
   -webkit-box-shadow: 1px 0px 39px -25px rgba(0,0,0,0.36);
   -moz-box-shadow: 1px 0px 39px -25px rgba(0,0,0,0.36);
+}
+
+.skill-card {
+  border-radius: .375rem;
+  margin: .5rem;
+  margin-bottom: 1.75rem;
+  border:  none;
+  transition: transform .4s ease-in-out;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 1px 0px 39px -25px rgba(0,0,0,0.36);
+  -webkit-box-shadow: 1px 0px 39px -25px rgba(0,0,0,0.36);
+  -moz-box-shadow: 1px 0px 39px -25px rgba(0,0,0,0.36);
+}
+
+.skills-tag {
+  border-radius: 20px;
+  background-color: #17283a;
+  border: 1.5px solid #25486d;
+  color: #1aa9fd;
+  opacity: 90%;
 }

@@ -8,6 +8,12 @@ export default function Navigation() {
         setIsMenuOpen(!isMenuOpen);
     }
 
+    const scrollToSection = (section) => {
+        document.getElementById(section)?.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
     return (
         <>
             <nav className="sticky top-0 px-5 py-5  lg:px-[2vw] xl:px-[4vw]  bg-[#0a0f14] border-b-0.5 border-gray-50/10 flex-wrap z-20 ">
@@ -21,11 +27,11 @@ export default function Navigation() {
                     {/* Bigger screen will show links */}
                     <div className="flex align-middle">
                         <ul className="hidden md:flex md:gap-5 lg:gap-10 self-center text-lg">
-                            <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500">Home</li>
-                            <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500">About</li>
-                            <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500">Skills</li>
-                            <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500">Project</li>
-                            <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500">About</li>
+                            <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500" onClick={() => scrollToSection("home")}>Home</li>
+                            <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500" onClick={() => scrollToSection("about")}>About</li>
+                            <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500" onClick={() => scrollToSection("skills")}>Skills</li>
+                            <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500" onClick={() => scrollToSection("projects")}>Projects</li>
+                            <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500" onClick={() => scrollToSection("contact")}>Contact</li>
                         </ul>
                     </div>
 
