@@ -87,3 +87,12 @@ h1, h2 {
   color: #1aa9fd;
   opacity: 90%;
 }
+
+.chip-button {
+  padding: default;
+}
+
+.chip-button:hover {
+  background-color: inherit;
+  transform: scale(1.01);
+}

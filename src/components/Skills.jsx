@@ -27,10 +27,13 @@ export default function Skills() {
 
     return (
         <>
-        <section className='bg-[#0a0d12] h-full' id="skills">
+        <section className='bg-[#0a0d12] h-full pb-10'>
             <div className="justify-center">
                 <div className="flex flex-column justify-center">
-                    <h2 className="text-center text-3xl md:text-5xl lg:text-5xl xl:text-5xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text">
+                    <h2 
+                        className="text-center text-3xl md:text-7xl lg:text-7xl xl:text-7xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
+                        id="skills"
+                    >
                         Technical Skills
                     </h2>
                 </div>
@@ -41,8 +44,8 @@ export default function Skills() {
 
                 {/* Cards */}
                 <div className="md:3/4 lg:w-5/6 xl:w-3/5 place-self-center">
-                <p className="text-center text-xl text-[#8998ad] dark:text-[#8998ad] mb-10 mx-10 lg:mx-0">
-                    A comprehensive overview of the technologies and tools I use to bring ideas to life
+                <p className="text-center text-xl md:text-4xl lg:text-3xl text-[#8998ad] dark:text-[#8998ad] mb-10 mx-10 lg:mx-0">
+                    Technologies and tools I use to bring ideas to life 
                 </p>
                 <div 
                     className='grid grid-cols-1 md:grid-flow-col md:grid-cols-2 md:grid-rows-2 justify-items-center gap-x-7 px-3 md:px-7'
@@ -53,15 +56,25 @@ export default function Skills() {
                             style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)" }} 
                             className={`mx-4 p-10 py-7 rounded-md w-full justify-center col-span-1 skill-card bg-[#0a0d12]`}
                             >
-                                <h1 className="text-2xl mb-7 text-wrap text-[#42a5f5]">{category.title}</h1>
+                                <h1 className="text-2xl md:text-4xl mb-7 text-wrap text-[#42a5f5]">{category.title}</h1>
                                 <div className="flex flex-wrap gap-2">
                                     {category.skills.map((skill) => {
                                         return (
                                             <Chip 
+                                            sx={{
+                                                padding: {
+                                                    md: "25px 20px"
+                                                },
+                                                fontSize: {
+                                                    sm: "1rem",
+                                                    md: "25px",
+                                                    lg: "20px"
+                                                }
+                                            }}
                                             label={skill}
                                             variant="outlined"
                                             color="info"
-                                            className=""
+                                            className="chip-button"
                                             />
                                         )
                                     })}
@@ -72,12 +85,13 @@ export default function Skills() {
 
                     </div>
                     <div 
+                    // `mx-4 p-10 py-7 rounded-md w-full justify-center col-span-1 skill-card bg-[#0a0d12]
                         style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)" }} 
-                        className='mx-4 px-6 py-8 rounded-md mb-5 w-fit place-self-center'
+                        className='mx-4 p-10 py-7 rounded-md w-fit place-self-center skill-card mb-10'
                     >
-                        <h1 className="text-2xl mb-5 text-center text-[#ba68c8]">Currently Learning</h1>
+                        <h1 className="text-2xl md:text-4xl mb-5 text-center text-[#ba68c8]">Currently Learning</h1>
                         <div className=" flex-wrap gap-2 justify-center">
-                            <p className="text-center text-md text-[#8998ad] mb-5">
+                            <p className="text-center text-md text-[#8998ad] mb-5 md:text-2xl">
                                 I'm always trying to expand my skill set and stay up to date
                                 with new technologies
                             </p>
@@ -85,10 +99,20 @@ export default function Skills() {
                             {currentlyLearning.map((skill) => {
                                 return (
                                     <Chip 
+                                    sx={{
+                                        padding: {
+                                            md: "25px 20px"
+                                        },
+                                        fontSize: {
+                                            sm: "1rem",
+                                            md: "25px",
+                                            lg: "20px"
+                                        },
+                                    }}
                                     label={skill}
                                     variant="outlined"
                                     color="secondary"
-                                    className="bg-"
+                                    className="chip-button"
                                     />
                                 )
                             })}

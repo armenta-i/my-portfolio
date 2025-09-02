@@ -16,9 +16,9 @@ export default function Navigation() {
 
     return (
         <>
-            <nav className="sticky top-0 px-5 py-5  lg:px-[2vw] xl:px-[4vw]  bg-[#0a0f14] border-b-0.5 border-gray-50/10 flex-wrap z-20 ">
+            <nav className="sticky top-0 px-5 py-5 md:py-8  lg:px-[2vw] xl:px-[4vw]  bg-[#0a0f14] border-b-0.5 border-gray-50/10 flex-wrap z-20 ">
                 <div className="flex justify-between md:px-3 lg:px-5 xl:px-40">
-                    <h1 className="bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text light:text-white text-lg md:text-2xl hover:cursor-pointer
+                    <h1 className="bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text light:text-white text-lg md:text-4xl hover:cursor-pointer
                     
                     ">
                         Ivan Armenta
@@ -26,7 +26,7 @@ export default function Navigation() {
 
                     {/* Bigger screen will show links */}
                     <div className="flex align-middle">
-                        <ul className="hidden md:flex md:gap-5 lg:gap-10 self-center text-lg">
+                        <ul className="hidden md:flex md:gap-5 lg:gap-10 self-center text-lg md:text-2xl">
                             <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500" onClick={() => scrollToSection("home")}>Home</li>
                             <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500" onClick={() => scrollToSection("about")}>About</li>
                             <li className="hover:text-sky-500 hover:cursor-pointer ease-in-out duration-500" onClick={() => scrollToSection("skills")}>Skills</li>
