@@ -14,6 +14,18 @@ export default function Hero() {
         <>
             <section className='relative h-screen md:h[92vh] overflow-hidden' id='home'>
                 <div className="absolute inset-0 bg-[url(/background_pic.jpg)] bg-cover bg-center blur-sm z-0"/>
+                {/* Deep Ocean Glow */}
+                {/* <div
+                className="absolute inset-0 z-0"
+                style={{
+                    background: `
+                    radial-gradient(70% 55% at 50% 50%, #1b3b5a 0%, #0f2a43 35%, #071f35 60%, #040d2c 85%, #01040d 100%),
+                    radial-gradient(160% 130% at 10% 10%, rgba(150,50,200,0.1) 38%, rgba(0,0,0,0.9) 76%, #000208 100%),
+                    radial-gradient(160% 130% at 90% 90%, rgba(200,50,200,0.15) 38%, rgba(0,0,0,0.9) 76%, #000208 100%)
+                    `                
+                }}
+                /> */}
+
                 <div className="relative z-10 flex text-center text-white justify-center h-full items-start">
                     <div className="mt-20 md:mt-32 lg:mt-54">
                         {/* Hero Text */}

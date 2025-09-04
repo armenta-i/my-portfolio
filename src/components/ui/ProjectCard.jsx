@@ -1,34 +1,47 @@
 import { CallMade, GitHub } from "@mui/icons-material";
 import { Chip, Fab } from "@mui/material";
 
-export default function ProjectCard({projectTech, featuredProject = false}) {
+export default function ProjectCard(
+    {
+        projectTitle,
+        projectDescription,
+        projectTech, 
+        featuredProject = false, 
+        githubRef="", 
+        liveDemo = "" , 
+        live = false,
+    }) {
+    
     return (
         <>
-            <div className="justify-center px-4 md:flex lg:px-50 h-full gap-5">
-                <div className="flex bg-[url(/background_pic.jpg)] w-full h-64 md:h-90 bg-cover bg-center rounded-xl mb-6 align-center"/>
-                <div className="px-2">
+            <div className="justify-center align-middle px-4 md:flex xl:px-60 h-full gap-5 z-0">
+                <div 
+                    className="flex-1 bg-[url(/background_pic.jpg)] w-full md:min-w-[50%] md:max-w-[50%] lg:min-w-[45%] h-64 md:h-100 lg:h-90 bg-cover bg-center rounded-xl mb-8 self-center"
+                />
+                <div className="md:flex flex-col align-sub justify-center">
                     {featuredProject ? 
                     <Chip 
-                    sx={{
-                        // padding: {
-                            //     md: "25px 20px"
-                            // },
-                            // fontSize: {
-                                //     sm: "1rem",
-                                //     md: "25px",
-                                //     lg: "20px"
-                                // },
-                            }}
-                            label={"Featured Project"}
-                            color="info"
-                            variant="outlined"
+                        sx={{
+                            padding: {
+                                lg: "15px 6px"
+                            },
+                            fontSize: {
+                                lg: "15px"
+                            },
+                        }}
+                        size=""
+                        label={"Featured Project"}
+                        color="info"
+                        variant="outlined"
+                        className="self-baseline"
                             />
                     : ""
                     }
-                    <h2 className="text-2xl md:text-5xl py-2 md:py-4">Health Routes</h2>
-                    <p>
-                        Cross-platform mobile application for hospital and emergency search with 
-                        real-time GPS directions and low-bandwidth optimization.
+                    <h2 className="text-3xl md:text-5xl py-2 md:py-4">
+                        {projectTitle}
+                    </h2>
+                    <p className="text-pretty text-xl lg:text-2xl">
+                        {projectDescription}
                     </p>
                     {/* Stack Chip */}
                     <div className="my-2 p-0">
@@ -39,39 +52,63 @@ export default function ProjectCard({projectTech, featuredProject = false}) {
                                     color="info"
                                     variant="outlined"
                                     className="m-1"
-                                    sx={{ padding: "0" }}
+                                    sx={{ 
+                                        padding: "0",
+                                        fontSize: {
+                                            md: "15px"
+                                        }
+                                    }}
                                 />
                             )
                         })}
                     </div>
                     {/* Git buttons */}
                     <div className="flex gap-5 mb-10 mt-5">
-                        <Fab 
-                            variant="extended" 
-                            size="small" 
-                            color="secondary" 
-                            className="z-0 bg-black"
-                            sx={{ 
-                                padding: "20px 10px",
-                                backgroundColor: "#181a1b"
-                            }}
+                        <a 
+                            href={githubRef}
+                            target="_blank"
                             >
-                            <GitHub sx={{ mr: 1}}/>
-                            View Code
-                        </Fab>
-                        <Fab 
-                            variant="extended" 
-                            size="small" 
-                            color="secondary"
-                            className=""
-                            sx={{ 
-                                padding: "20px 10px",
-                                backgroundColor: "#181a1b"
-                            }}
+                            <Fab 
+                                variant="extended" 
+                                size="small" 
+                                color="secondary" 
+                                className="bg-black"
+                                sx={{
+                                    padding: "20px 10px",
+                                    backgroundColor: "#181a1b",
+                                    fontSize: {
+                                        md: "15px"
+                                    }
+                                }}
+                                >
+                                <GitHub sx={{ mr: 1}}/>
+                                View Code
+                            </Fab>
+                        </a>
+
+                        {live ? 
+                            <a 
+                                href={liveDemo}
+                                target="_blank"
                             >
-                            <CallMade sx={{ mr: 1}}/>
-                            View Code
-                        </Fab>
+                                <Fab 
+                                    variant="extended" 
+                                    size="small" 
+                                    color="secondary"
+                                    className=""
+                                    sx={{ 
+                                        padding: "20px 10px",
+                                        backgroundColor: "#181a1b"
+                                    }}
+                                    >
+                                    <CallMade sx={{ mr: 1}}/>
+                                    Live Demo
+                                </Fab>
+                            </a>
+                        :
+                        ""
+                        }
+
                     </div>
                 </div>
             </div>
