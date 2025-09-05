@@ -4,6 +4,8 @@ import ProjectCard from "./ui/ProjectCard";
 
 export default function Projects() {
     const techProjectOne = ["React Native", "FastAPI", "Supabase", "Docker", "Python", "Expo"]
+    const techProjectTwo = ["React", "FastAPI", "Python", "JavaScript", "HIBP" , "DeHashed"]
+    const techProjectThree = ["PHP", "Bootstrap", "HTML", "CSS", "SQL"]
 
     return (
         <>
@@ -22,7 +24,7 @@ export default function Projects() {
                     </div>
                     {/* Header Underline */}
                     <div  className='w-24 md:w-30 h-1 mx-auto rounded-sm mb-10 bg-gradient-to-r from-sky-500 to-fuchsia-600 text-transparent'/>  
-                    <p className="text-center text-xl md:text-4xl lg:text-3xl text-[#8998ad] dark:text-[#8998ad] mb-10 lg:mb-25 mx-10 lg:mx-0">
+                    <p className="text-center text-xl md:text-2xl lg:text-3xl text-[#8998ad] dark:text-[#8998ad] mb-10 lg:mb-25 mx-10 lg:mx-0">
                         A collection of projects that showcase my skills and passion for development
                     </p>
                 </div>
@@ -38,22 +40,25 @@ export default function Projects() {
                         projectTech={techProjectOne}
                         featuredProject={true}
                         githubRef="https://github.com/armenta-i/health-routes"
+                        imgUrl="/health_routes.png" 
                     />
                     {/* 2nd */}
                     <ProjectCard 
                         projectTitle={"CredStalker"}
                         projectDescription={
-                            "Website to check for leaked credentials, scan list of leaked credentials and creates a summary for the user to analyze and change their credentials"
+                            "Web application for detecting leaked credentials, scanning breach data, and generating user-friendly summaries to help users analyze and secure their accounts."
                         }
-                        projectTech={techProjectOne}
+                        projectTech={techProjectTwo}
                         githubRef="https://github.com/armenta-i/cred-stalker"
-                    />
+                        imgUrl="/cred_stalker.png"
+                        />
                     {/* 3rd */}
                     <ProjectCard 
-                        projectTitle={"Place"}
-                        projectDescription={"helo"}
-                        projectTech={techProjectOne}
-                        githubRef=""
+                        projectTitle={"UniJob"}
+                        projectDescription={
+                            "Full-stack web platform for job matching within the computer science department, featuring student and recruiter dashboards, application tracking, and advanced search for streamlined hiring."                        }
+                        projectTech={techProjectThree}
+                        githubRef="https://github.com/armenta-i/Student_Job_Finder"
                     />
 
                 </div>

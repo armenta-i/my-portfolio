@@ -44,7 +44,7 @@ export default function Skills() {
 
                 {/* Cards */}
                 <div className="md:3/4 lg:w-5/6 xl:w-3/5 place-self-center">
-                <p className="text-center text-xl md:text-4xl lg:text-3xl text-[#8998ad] dark:text-[#8998ad] mb-10 mx-10 lg:mx-0">
+                <p className="text-center text-xl md:text-2xl lg:text-3xl text-[#8998ad] dark:text-[#8998ad] mb-10 mx-10 lg:mx-0">
                     Technologies and tools I use to bring ideas to life 
                 </p>
                 <div 

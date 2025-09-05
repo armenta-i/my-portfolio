@@ -1,8 +1,37 @@
 import { Email, GitHub, LinkedIn, MailOutline, PersonPinCircle, PersonPinCircleOutlined, Phone, PhoneOutlined } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import '../index.css';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+    // email_public_key='kSsG34MrXh4_3gAnY'
+    // email_template_id='template_1rhi4xc'
+    // email_service_id='template_7a7ai59'
+    const submitMessage = (e) => {
+        e.preventDefault();
+        
+            // Debug: Log all form data
+        const formData = new FormData(e.target);
+        console.log('Form data being sent:');
+        for (let [key, value] of formData.entries()) {
+            console.log(`${key}: "${value}"`);
+        }
+
+        emailjs.sendForm(
+            import.meta.env.VITE_GMAIL_SERVICE_ID,
+            import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+            e.target,
+            import.meta.env.VITE_EMAIL_PUBLIC_KEY
+        )
+        .then(() => {
+            alert("message sent");
+        })
+        .catch((error) => {
+            alert("error sending message");
+            console.error(error)
+        })
+    }
+
     return (
         <>
             <section
@@ -22,15 +51,15 @@ export default function Contact() {
                     </div>
                     {/* Header Underline */}
                     <div  className='w-24 md:w-30 h-1 mx-auto rounded-sm mb-10 bg-gradient-to-r from-sky-500 to-fuchsia-600 text-transparent'/>  
-                    <p className="text-center text-balance text-xl md:text-4xl lg:text-3xl text-[#8998ad] dark:text-[#8998ad] mb-10 lg:mb-15 mx-6 lg:mx-0">
+                    <p className="text-center text-balance text-xl md:text-2xl lg:text-3xl text-[#8998ad] dark:text-[#8998ad] mb-10 lg:mb-15 mx-6 lg:mx-0">
                         I'm always open to discussing new opportunities, collaborations, or just having a chat about technology.
                     </p>
                 </div>
 
                 {/* Main Info */}
-                <div className="md:flex px-4 md:px-40 md:gap-10 xl:px-50 mb-20">
+                <div className="md:flex px-4 lg:px-20 md:gap-10 xl:px-50 mb-20">
                     {/* Person Info */}
-                    <div className="">
+                    <div className="md:flex flex-col flex-1">
                         <h2 className="text-3xl md:text-4xl mb-5 text-wrap text-[#42a5f5]">
                             Let's Connect
                         </h2>
@@ -41,15 +70,15 @@ export default function Contact() {
                         </p>
 
                         {/* Email card */}
-
                         <div 
                             style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)" }} 
                             className="flex items-center gap-4 px-7 py-5 rounded-xl my-5 box-general-shadow"
                         >
-                            <div className="bg-gradient-to-br from-blue-700/20 to-blue-700/20 p-2 rounded-md w-fit">
+                            <div className="bg-gradient-to-br from-blue-700/20 to-blue-700/20 p-2 md:p-4 rounded-md md:rounded-lg w-fit">
                                 <MailOutline
                                     sx={{
-                                        backgroundColor: ""
+                                        backgroundColor: "",
+                                        fontSize: { xs: 24, md: 32 } // This makes the icon bigger at md breakpoint
                                     }}
                                     color=""
                                     className="text-[#42a5f5]"
@@ -57,8 +86,8 @@ export default function Contact() {
                                     />
                             </div>
                             <div className="">
-                                <h2>Email</h2>
-                                <p className="text-[#8998ad]">
+                                <h2 className="md:text-xl">Email</h2>
+                                <p className="text-[#8998ad] md:text-lg">
                                     i_armenta@outlook.com
                                 </p>
                             </div>
@@ -66,21 +95,23 @@ export default function Contact() {
                         {/* Phone card */}
                         <div 
                             style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)" }} 
-                            className="flex items-center gap-4 px-7 py-5 rounded-xl my-5 box-general-shadow"
+                            className="flex items-center gap-4 px-7 py-5 rounded-xl mb-5 box-general-shadow"
                         >   
-                            <div className="bg-gradient-to-br from-blue-700/20 to-blue-700/20 p-2 rounded-md">
+                            <div className="bg-gradient-to-br from-blue-700/20 to-blue-700/20 p-2 md:p-4 rounded-md md:rounded-lg">
                                 <PhoneOutlined
                                     sx={{
-                                        backgroundColor: ""
+                                        backgroundColor: "",
+                                        fontSize: { xs: 24, md: 32 } // This makes the icon bigger at md breakpoint
                                     }}
                                     color=""
                                     className="text-[#42a5f5]"
-                                    
-                                    />
+                                />
                             </div>
                             <div className="">
-                                <h2>Phone</h2>
-                                <p className="text-[#8998ad]">
+                                <h2 className="md:text-xl">
+                                    Phone
+                                </h2>
+                                <p className="text-[#8998ad] md:text-lg">
                                     +1 (575) 915 5602
                                 </p>
                             </div>
@@ -88,12 +119,13 @@ export default function Contact() {
                         {/* Location card */}
                         <div 
                             style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)" }} 
-                            className="flex items-center gap-4 px-7 py-5 rounded-xl my-5 box-general-shadow"
+                            className="flex items-center gap-4 px-7 py-5 rounded-xl mb-5 box-general-shadow"
                         >
-                            <div className="bg-gradient-to-br from-blue-700/20 to-blue-700/20 p-2 rounded-md">
+                            <div className="bg-gradient-to-br from-blue-700/20 to-blue-700/20 p-2 md:p-4 rounded-md md:round-lg">
                                 <PersonPinCircleOutlined
                                     sx={{
-                                        backgroundColor: ""
+                                        backgroundColor: "",
+                                        fontSize: { xs: 24, md: 32 } // This makes the icon bigger at md breakpoint
                                     }}
                                     color=""
                                     className="text-[#42a5f5]"
@@ -101,19 +133,31 @@ export default function Contact() {
                                     />
                             </div>
                             <div className="">
-                                <h2>Location</h2>
-                                <p className="text-[#8998ad]">
+                                <h2 className="md:text-xl">Location</h2>
+                                <p className="text-[#8998ad] md:text-lg">
                                     El Paso, Texas
                                 </p>
                             </div>
                         </div>
 
                         {/* Social Media Buttons */}
-                        <div className="flex gap-7 mb-10">
+                        <div className="flex gap-7 mb-10 lg:mt-10">
                         {/* Github Button */}
                             <Button
                                 sx={{
-                                    textTransform: "none",
+                                textTransform: "none",
+                                fontSize: {
+                                    xs: "14px", // default before md
+                                    md: "16px", // bigger after md
+                                },
+                                "& .MuiButton-startIcon": {
+                                    "& svg": {
+                                    fontSize: {
+                                        xs: "18px", // default icon size
+                                        md: "22px", // bigger icon after md
+                                    },
+                                    },
+                                },
                                 }}
                                 component="label"
                                 role={undefined}
@@ -127,7 +171,19 @@ export default function Contact() {
                             {/* LinkedIn Button */}
                             <Button
                                 sx={{
-                                    textTransform: "none"
+                                    textTransform: "none",
+                                    fontSize: {
+                                        xs: "14px", // default before md
+                                        md: "16px", // bigger after md
+                                    },
+                                    "& .MuiButton-startIcon": {
+                                        "& svg": {
+                                        fontSize: {
+                                            xs: "18px", // default icon size
+                                            md: "22px", // bigger icon after md
+                                        },
+                                        },
+                                    },
                                 }}
                                 component="label"
                                 role={undefined}
@@ -140,66 +196,76 @@ export default function Contact() {
                             </Button>
                         </div>
                     </div>
+
                     {/* Form */}
                     <div
                         style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)" }} 
-                        className="grow-1 rounded-lg w-full h-fit"
+                        className="grow-1 rounded-lg w-full h-full flex flex-col flex-1"
                     >       
-                        <h2 className="text-2xl md:text-4xl mb-5 text-wrap text-[#42a5f5] px-10 pt-5 pb-1">
+                        <h2 className="text-2xl md:text-3xl mb-5 text-wrap text-[#42a5f5] px-10 pt-5 pb-1">
                             Send a Message
                         </h2>
 
-                        <form>
+                        <form onSubmit={submitMessage}>
 
                             {/* <!-- To simplify the tutorial, the value is static. --> */}
-                            <div className="px-10">
+                            <div className="px-10 mb-10">
                             <input type="hidden" name="time" value="Mar 10 2025 08:46"/>
-                            <div className="md:flex">
+                            <div className="md:pb-5 lg:pb-0">
                                 <div>
                                 {/* Name */}
-                                <label className="text-md">
+                                <label className="text-md md:text-xl">
                                     Name
                                 </label><br/>
                                 <input 
                                     type="text" 
                                     name="name" 
                                     required
-                                    className="bg-black my-2 mx-1 w-full rounded-lg py-1 px-3"
+                                    className="bg-gray-900 my-2 mx-1 w-full rounded-lg py-1 px-3 md:py-3"
+                                    placeholder="Your name"
                                     />
                                 </div>
-                            <div className="flex flex-col">
+                            <div className="">
                             {/* Email */}
-                            <label className="text-md text-white">
+                            <label className="text-md md:text-xl">
                                 Email
                             </label><br/>
                             </div>
+                            <div></div>
                                 <input 
                                     type="email" 
                                     name="email" 
                                     required
-                                    className="bg-black my-2 mx-1 w-full rounded-lg py-1 px-3"
+                                    className="bg-gray-900 my-2 mx-1 w-full rounded-lg py-1 px-3 md:py-3"
+                                    placeholder="your.email@example.com"
                                     />
-                            </div>
                             {/* Subject */}
-                            <label className="text-md">
+                            <div className="">
+                                <label className="text-md md:text-xl">
                                 Subject
-                            </label><br/>
+                                </label>
+                            </div>
                                 <input
                                     type="text"
                                     name="subject" 
                                     required
-                                    className="bg-gray-900 mx-1 w-full rounded-lg py-1 px-3"
-                                />                            
+                                    className="bg-gray-900 my-2 mx-1 w-full rounded-lg py-1 px-3 md:py-3"
+                                    placeholder="What's this about?"
+                                    />                            
                                 {/* Message */}
-                            <label>Message</label><br/>
+                            <label className="text-md md:text-xl">
+                                Message
+                            </label><br/>
                             <textarea 
                                 name="message" 
                                 required
-                                className="bg-(--gradient-accent-flipped) my-2 mx-1 w-full h-30 rounded-lg md:rounded-bl-none py-1 px-3 resize-none"
+                                className="bg-gray-900 my-2 mx-1 w-full h-30 rounded-lg py-1 px-3 resize-none xl:mb-7 md:py-3"
                                 // background: "var(--gradient-accent)"
-                            >
+                                placeholder="Tell me about your project, ideas or just say hello"
+                                >
                             </textarea>
                             {/* Submit Button */}
+                            </div>
                             <Button
                                 sx={{
                                     textTransform: "none",

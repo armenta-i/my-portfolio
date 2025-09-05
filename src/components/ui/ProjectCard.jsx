@@ -10,13 +10,15 @@ export default function ProjectCard(
         githubRef="", 
         liveDemo = "" , 
         live = false,
+        imgUrl = "/background_pic.jpg"
     }) {
     
     return (
         <>
             <div className="justify-center align-middle px-4 md:flex xl:px-60 h-full gap-5 z-0">
                 <div 
-                    className="flex-1 bg-[url(/background_pic.jpg)] w-full md:min-w-[50%] md:max-w-[50%] lg:min-w-[45%] h-64 md:h-100 lg:h-90 bg-cover bg-center rounded-xl mb-8 self-center"
+                    style={{ backgroundImage: `url(${imgUrl})` }}
+                    className={`flex-1   w-full md:min-w-[50%] md:max-w-[50%] lg:min-w-[45%] h-64 md:h-100 lg:h-90 bg-cover bg-center rounded-xl mb-8 self-center`}
                 />
                 <div className="md:flex flex-col align-sub justify-center">
                     {featuredProject ? 
