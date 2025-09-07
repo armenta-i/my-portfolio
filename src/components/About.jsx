@@ -10,7 +10,7 @@ export default function About() {
             className="h-full border-[0.1px] border-[#181926]">
             {/* About me header */}
             <div className="flex flex-column justify-center mt-15 md:mt-20 lg:mt-20 ">
-                <h2 className="text-3xl md:text-7xl lg:text-7xl xl:text-7xl px-2 mb-4 md:mb-6">About
+                <h2 className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl px-2 mb-4 md:mb-6">About
                     <span className="text-transparent">|</span>
                     <span className="bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text">Me</span>
                 </h2>

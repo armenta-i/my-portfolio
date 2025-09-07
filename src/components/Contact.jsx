@@ -4,9 +4,6 @@ import '../index.css';
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-    // email_public_key='kSsG34MrXh4_3gAnY'
-    // email_template_id='template_1rhi4xc'
-    // email_service_id='template_7a7ai59'
     const submitMessage = (e) => {
         e.preventDefault();
         
@@ -38,13 +35,13 @@ export default function Contact() {
             /* Contact Info header */
             style={{ background: "var(--gradient-accent)" }}
             className="h-full border-[0.1px] border-[#181926]"
+            id="contact"
             >
 
                 <div className="justify-center">
                     <div className="flex flex-column justify-center">
                         <h2 
-                            className="text-center text-3xl md:text-7xl lg:text-7xl xl:text-7xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
-                            id="contact"
+                            className="text-center text-3xl md:text-5xl xl:text-6xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
                         >
                             Get In Contact
                         </h2>

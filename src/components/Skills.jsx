@@ -27,12 +27,15 @@ export default function Skills() {
 
     return (
         <>
-        <section className='bg-[#0a0d12] h-full pb-10'>
+        <section 
+            className='bg-[#0a0d12] h-full pb-10'
+            id="skills"
+            >
             <div className="justify-center">
                 <div className="flex flex-column justify-center">
                     <h2 
-                        className="text-center text-3xl md:text-7xl lg:text-7xl xl:text-7xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
-                        id="skills"
+                        // text-3xl md:text-5xl lg:text-5xl xl:text-6xl px-2 mb-4 md:mb-6
+                        className="text-center text-3xl md:text-5xl xl:text-6xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
                     >
                         Technical Skills
                     </h2>

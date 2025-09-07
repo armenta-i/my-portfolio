@@ -16,7 +16,7 @@ export default function Projects() {
                 <div className="justify-center">
                     <div className="flex flex-column justify-center">
                         <h2 
-                            className="text-center text-3xl md:text-7xl lg:text-7xl xl:text-7xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
+                            className="text-center text-3xl md:text-5xl xl:text-6xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
                             id="skills"
                         >
                             Featured Projects
