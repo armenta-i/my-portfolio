@@ -9,7 +9,7 @@ export default function About() {
         <>
         <section
             style={{ background: "var(--gradient-accent)" }}
-            className="h-full border-[0.1px] border-[#181926]">
+            className="h-full border-[0.01px] border-transparent">
             {/* Animation contianer */}
             {/* About me header */}
             <motion.div 
