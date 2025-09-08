@@ -1,5 +1,7 @@
 import { CallMade, GitHub } from "@mui/icons-material";
 import { Chip, Fab } from "@mui/material";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react";
 
 export default function ProjectCard(
     {
@@ -15,12 +17,22 @@ export default function ProjectCard(
     
     return (
         <>
-            <div className="justify-center align-middle px-4 md:flex xl:px-60 h-full gap-5 z-0">
-                <div 
-                    style={{ backgroundImage: `url(${imgUrl})` }}
-                    className={`flex-1   w-full md:min-w-[50%] md:max-w-[50%] lg:min-w-[45%] h-64 md:h-100 lg:h-90 bg-cover bg-center rounded-xl mb-8 self-center`}
-                />
-                <div className="md:flex flex-col align-sub justify-center">
+            <div className="justify-center align-middle px-4 md:flex xl:px-65 h-full gap-5 z-0">
+                <div className="flex-1 w-full md:min-w-[50%] md:max-w-[50%] lg:min-w-[45%] h-64 md:h-100 lg:h-90 mb-8 self-center overflow-hidden rounded-xl transition-al duration-500 bg-[length:100%_100%] hover:bg-[length:120%_120%]">
+                    <motion.div 
+                        initial={{ x: -100}}
+                        whileInView={{ x: 0}}
+                        transition={{ duration: .5, ease: "easeInOut",}}
+                        style={{ backgroundImage: `url(${imgUrl})` }}
+                        className="w-full h-full bg-cover bg-center"
+                    />
+                </div>
+                <motion.div
+                    initial={{opacity: 0, x: 100}}
+                    whileInView={{ opacity: 1, x: 0}}
+                    transition={{ duration: 0.8, ease: "easeInOut"}}
+                    className="md:flex flex-col align-sub justify-center"
+                >
                     {featuredProject ? 
                     <Chip 
                         sx={{
@@ -39,10 +51,10 @@ export default function ProjectCard(
                             />
                     : ""
                     }
-                    <h2 className="text-3xl md:text-5xl py-2 md:py-4">
+                    <h2 className="text-3xl  py-2 md:py-4">
                         {projectTitle}
                     </h2>
-                    <p className="text-pretty text-xl lg:text-2xl">
+                    <p className="text-pretty text-xl">
                         {projectDescription}
                     </p>
                     {/* Stack Chip */}
@@ -112,7 +124,7 @@ export default function ProjectCard(
                         }
 
                     </div>
-                </div>
+                </motion.div>
             </div>
         </>
     )

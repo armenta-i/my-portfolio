@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { CallMade, GitHub } from "@mui/icons-material";
 import { Chip, Fab } from "@mui/material";
 import ProjectCard from "./ui/ProjectCard";
+import { motion } from "motion/react";
 
 export default function Projects() {
     const techProjectOne = ["React Native", "FastAPI", "Supabase", "Docker", "Python", "Expo"]
@@ -14,19 +16,28 @@ export default function Projects() {
                 className="h-full border-[0.1px] border-[#181926]"
                 id="projects">
                 <div className="justify-center">
-                    <div className="flex flex-column justify-center">
+                    <motion.div 
+                        initial={{ opacity: 0}}
+                        whileInView={{ opacity: 1}}
+                        transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2}}
+                        className="flex flex-column justify-center"
+                    >
                         <h2 
-                            className="text-center text-3xl md:text-5xl xl:text-6xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
+                            className="text-center text-3xl md:text-5xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
                             id="skills"
                         >
                             Featured Projects
                         </h2>
-                    </div>
+                    </motion.div>
                     {/* Header Underline */}
                     <div  className='w-24 md:w-30 h-1 mx-auto rounded-sm mb-10 bg-gradient-to-r from-sky-500 to-fuchsia-600 text-transparent'/>  
-                    <p className="text-center text-xl md:text-2xl lg:text-3xl text-[#8998ad] dark:text-[#8998ad] mb-10 lg:mb-25 mx-10 lg:mx-0">
+                    <motion.p 
+                        initial={{ opacity: 0}}
+                        whileInView={{ opacity: 1}}
+                        transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2}}
+                        className="text-center text-xl md:text-2xl text-[#8998ad] dark:text-[#8998ad] mb-10 lg:mb-25 mx-10 lg:mx-0">
                         A collection of projects that showcase my skills and passion for development
-                    </p>
+                    </motion.p>
                 </div>
 
                 {/* Projects */}
@@ -59,11 +70,16 @@ export default function Projects() {
                             "Full-stack web platform for job matching within the computer science department, featuring student and recruiter dashboards, application tracking, and advanced search for streamlined hiring."                        }
                         projectTech={techProjectThree}
                         githubRef="https://github.com/armenta-i/Student_Job_Finder"
+                        imgUrl="/uni_job.png"
                     />
 
                 </div>
 
-                <div className="relative flex gap-2 rounded-sm justify-center my-10 mb-20 z-10">
+                <motion.div 
+                    initial={{ opacity: 0}}
+                    whileInView={{ opacity: 1}}
+                    transition={{ duration: 0.8, ease: "easeInOut"}}
+                    className="relative flex gap-2 rounded-sm justify-center my-10 mb-20 z-10">
                     <a 
                         className="gap-3 bg-[#181a1b] rounded-xl" 
                         href="https://github.com/armenta-i"
@@ -85,7 +101,7 @@ export default function Projects() {
                                 View All Projects on Github
                             </Fab>
                     </a>
-                </div>
+                </motion.div>
             </section>
         </>
     )

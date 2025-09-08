@@ -2,6 +2,8 @@ import { Email, GitHub, LinkedIn, MailOutline, PersonPinCircle, PersonPinCircleO
 import { Button } from "@mui/material";
 import '../index.css';
 import emailjs from '@emailjs/browser';
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react";
 
 export default function Contact() {
     const submitMessage = (e) => {
@@ -38,29 +40,40 @@ export default function Contact() {
             id="contact"
             >
 
-                <div className="justify-center">
+                <motion.div 
+                    initial={{ opacity: 0}}
+                    whileInView={{ opacity: 1}}
+                    transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2}}
+                    className="justify-center"
+                >
                     <div className="flex flex-column justify-center">
                         <h2 
-                            className="text-center text-3xl md:text-5xl xl:text-6xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
+                            className="text-center text-3xl md:text-5xl px-3 mb-4 md:mb-6 mt-15 md:mt-20 lg:mt-20 bg-gradient-to-r from-sky-500 to-fuchsia-600 inline-block text-transparent bg-clip-text"
                         >
                             Get In Contact
                         </h2>
                     </div>
                     {/* Header Underline */}
                     <div  className='w-24 md:w-30 h-1 mx-auto rounded-sm mb-10 bg-gradient-to-r from-sky-500 to-fuchsia-600 text-transparent'/>  
-                    <p className="text-center text-balance text-xl md:text-2xl lg:text-3xl text-[#8998ad] dark:text-[#8998ad] mb-10 lg:mb-15 mx-6 lg:mx-0">
+                    <p className="text-center text-balance text-xl md:text-2xl text-[#8998ad] dark:text-[#8998ad] mb-10 lg:mb-15 mx-6">
                         I'm always open to discussing new opportunities, collaborations, or just having a chat about technology.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Main Info */}
-                <div className="md:flex px-4 lg:px-20 md:gap-10 xl:px-50 mb-20">
+                <div 
+                    className="md:flex px-4 lg:px-20 md:gap-10 xl:px-50 mb-20">
                     {/* Person Info */}
-                    <div className="md:flex flex-col flex-1">
-                        <h2 className="text-3xl md:text-4xl mb-5 text-wrap text-[#42a5f5]">
+                    <motion.div 
+                        initial={{ opacity: 0, y: -50}}
+                        whileInView={{ opacity: 1, y: 0}}
+                        transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2}}
+                        className="md:flex flex-col flex-1"
+                    >
+                        <h2 className="text-3xl mb-5 text-wrap text-[#42a5f5]">
                             Let's Connect
                         </h2>
-                        <p className="md:text-xl">
+                        <p className="md:text-lg">
                             Whether you have a project in mind, want to collaborate, or just want 
                             to say hello, I'd love to hear from you. Feel free to reach out through 
                             any of the channels below.
@@ -75,7 +88,7 @@ export default function Contact() {
                                 <MailOutline
                                     sx={{
                                         backgroundColor: "",
-                                        fontSize: { xs: 24, md: 32 } // This makes the icon bigger at md breakpoint
+                                        fontSize: { xs: 24} // This makes the icon bigger at md breakpoint
                                     }}
                                     color=""
                                     className="text-[#42a5f5]"
@@ -83,8 +96,8 @@ export default function Contact() {
                                     />
                             </div>
                             <div className="">
-                                <h2 className="md:text-xl">Email</h2>
-                                <p className="text-[#8998ad] md:text-lg">
+                                <h2 className="md:text-lg">Email</h2>
+                                <p className="text-[#8998ad] md:text-dm">
                                     i_armenta@outlook.com
                                 </p>
                             </div>
@@ -98,17 +111,17 @@ export default function Contact() {
                                 <PhoneOutlined
                                     sx={{
                                         backgroundColor: "",
-                                        fontSize: { xs: 24, md: 32 } // This makes the icon bigger at md breakpoint
+                                        fontSize: { xs: 24 } // This makes the icon bigger at md breakpoint
                                     }}
                                     color=""
                                     className="text-[#42a5f5]"
                                 />
                             </div>
                             <div className="">
-                                <h2 className="md:text-xl">
+                                <h2 className="md:text-lg">
                                     Phone
                                 </h2>
-                                <p className="text-[#8998ad] md:text-lg">
+                                <p className="text-[#8998ad] md:text-md">
                                     +1 (575) 915 5602
                                 </p>
                             </div>
@@ -122,7 +135,7 @@ export default function Contact() {
                                 <PersonPinCircleOutlined
                                     sx={{
                                         backgroundColor: "",
-                                        fontSize: { xs: 24, md: 32 } // This makes the icon bigger at md breakpoint
+                                        fontSize: { xs: 24} // This makes the icon bigger at md breakpoint
                                     }}
                                     color=""
                                     className="text-[#42a5f5]"
@@ -130,8 +143,8 @@ export default function Contact() {
                                     />
                             </div>
                             <div className="">
-                                <h2 className="md:text-xl">Location</h2>
-                                <p className="text-[#8998ad] md:text-lg">
+                                <h2 className="md:text-lg">Location</h2>
+                                <p className="text-[#8998ad] md:text-md">
                                     El Paso, Texas
                                 </p>
                             </div>
@@ -192,14 +205,17 @@ export default function Contact() {
                                 LinkedIn
                             </Button>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Form */}
-                    <div
+                    <motion.div
+                        initial={{ opacity: 0, y: 50}}
+                        whileInView={{ opacity: 1, y: 0}}
+                        transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2}}
                         style={{ background: "var(--gradient-accent)", borderImage: "var(--gradient-accent-flipped)" }} 
                         className="grow-1 rounded-lg w-full h-full flex flex-col flex-1"
                     >       
-                        <h2 className="text-2xl md:text-3xl mb-5 text-wrap text-[#42a5f5] px-10 pt-5 pb-1">
+                        <h2 className="text-2xl mb-5 text-wrap text-[#42a5f5] px-10 pt-5 pb-1">
                             Send a Message
                         </h2>
 
@@ -272,13 +288,13 @@ export default function Contact() {
                                 variant="outlined"
                                 tabIndex={-1}
                                 // startIcon={<GitHub />}
-                                className="bg-[#181a1b] hover:bg-gradient-to-br hover:from-blue-700/20 hover:to-blue-700/20 border-1 border-[#42a5f5] w-full"
+                                className="bg-[#181a1b] duration-500 ease-in-out hover:bg-gradient-to-br hover:from-blue-700/20 hover:to-blue-700/20 border-1 border-[#42a5f5] w-full"
                                 >
                             <input type="submit" value={"Submit Message"} className="py-2"/>
                             </Button>
                             </div>
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
         </>

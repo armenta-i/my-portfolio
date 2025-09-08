@@ -1,6 +1,10 @@
 import { LinkedIn, Email } from '@mui/icons-material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react"
+// import { fadeInVariant } from './ui/animation';
+import Navigation from './Navigation';
 
 export default function Hero() {
     const scrollToSection = (sectionId) => {
@@ -12,7 +16,9 @@ export default function Hero() {
 
     return (
         <>
-            <section className='relative h-screen md:h[92vh] overflow-hidden' id='home'>
+            <section
+                className='relative h-screen md:h[92vh] overflow-hidden'
+                id='home'>
                 <div className="absolute inset-0 bg-[url(/background_pic.jpg)] bg-cover bg-center blur-sm z-0"/>
                 {/* Deep Ocean Glow */}
                 <div
@@ -26,8 +32,12 @@ export default function Hero() {
                 }}
                 />
 
-                <div className="relative z-10 flex text-center text-white justify-center h-full items-start">
-                    <div className="mt-20 md:mt-32 lg:mt-54">
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="relative z-10 flex text-center text-white justify-center h-full items-start">
+                    <div className="mt-10 md:mt-20 md:mt-32 lg:mt-54">
                         {/* Hero Text */}
                         <h1 className="text-4xl sm:text-4xl md:text-7xl lg:text-7xl xl:text-7xl px-2">Hi, I'm
                             <span className="text-transparent">|</span>
@@ -58,18 +68,18 @@ export default function Hero() {
                         </div>
 
                         {/* Social Icons */}
-                        <div className='mt-10 flex gap-5 justify-center'>
-                            <div className='bg-transparent bg-black rounded-4xl p-2 hover:shadow-[0px_0px_60px_-15px_#009bf5]'>
+                        <div className='mt-5 md:mt-10 flex gap-5 justify-center'>
+                            <div className='bg-transparent bg-black rounded-4xl p-2 hover:shadow-[0px_0px_60px_-15px_#009bf5] ease-in-out duration-500'>
                                 <a href="https://github.com/armenta-i">
                                     <GitHubIcon sx={{ color: '#bcbfc2'}} fontSize='large' className='hover:cursor-pointer'></GitHubIcon>
                                 </a>
                             </div>
-                            <div className='bg-transparent bg-black rounded-4xl p-2 hover:shadow-[0px_0px_60px_-15px_#009bf5]'>
+                            <div className='bg-transparent bg-black rounded-4xl p-2 hover:shadow-[0px_0px_60px_-15px_#009bf5] ease-in-out duration-500'>
                                 <a href="https://www.linkedin.com/in/iarmenta/">
                                     <LinkedIn sx={{ color: '#bcbfc2', }} fontSize='large' className='hover:cursor-pointer'></LinkedIn>
                                 </a>
                             </div>
-                            <div className='bg-transparent bg-black rounded-4xl p-2 hover:shadow-[0px_0px_80px_-15px_#009bf5]'>
+                            <div className='bg-transparent bg-black rounded-4xl p-2 hover:shadow-[0px_0px_80px_-15px_#009bf5] ease-in-out duration-500'>
                                 <a href="mailto:i_armenta@outlook.com">
                                     <Email sx={{ color: '#bcbfc2', }} fontSize='large' className='hover:cursor-pointer'></Email>
                                 </a>
@@ -79,12 +89,12 @@ export default function Hero() {
                         <div 
                             id="about"
                             onClick={() => scrollToSection('about')} 
-                            className="absolute bottom-0 md:bottom-0 xl:bottom-16 left-1/2 -translate-x-1/2 cursor-pointer animate-bounce">
+                            className="absolute bottom-20 xl:bottom-16 left-1/2 -translate-x-1/2 cursor-pointer animate-bounce">
                             <ExpandMoreIcon className="w-8 h-8 text-primary" fontSize='large'/>
                         </div>
 
                     </div>
-                </div>
+                </motion.div>
             </section>
         </>
     )
